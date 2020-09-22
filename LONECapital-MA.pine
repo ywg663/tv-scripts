@@ -1,0 +1,62 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © YangWengang
+
+//@version=4
+study("LONE-MA",overlay=true)
+//e0=ema(close,5)
+//c0=sma(close,5)
+e1=ema(close,20)
+c1=sma(close,20)
+e2=ema(close,60)
+c2=sma(close,60)
+e3=ema(close,120)
+c3=sma(close,120)
+//plot(e0,"ema5",color=color.green)
+//plot(c0,"ma5",color=color.lime)
+plot(e1,"ema20",color=#D3D3D3,linewidth=2)
+plot(c1,"ma20",color=color.gray,linewidth=2)
+//plot(c1,"ma20",color=bar_index % 2 == 0 ? #D3D3D3 : #00000000,linewidth=2)
+plot(e2,"ema60",color=#FDBCB4,linewidth=2)
+plot(c2,"ma60",color=color.red,linewidth=2)
+plot(e3,"ema120",color=#ADD8E6,linewidth=2)
+plot(c3,"ma120",color=color.blue,linewidth=2)
+//DKJ
+cond=barstate.islast
+moveBar=input(0)
+//x5=input(5)+moveBar
+x20=input(20)+moveBar
+x60=input(60)+moveBar
+x120=input(120)+moveBar
+//plot(cond?low[5]:na,color=#FFC40C,linewidth=5,offset=-x5,style=plot.style_circles,transp=0)
+plot(cond?low[20]:na,color=color.gray,linewidth=8,offset=-x20,style=plot.style_circles,transp=0)
+plot(cond?low[60]:na,color=color.red,linewidth=8,offset=-x60,style=plot.style_circles,transp=0)
+plot(cond?low[120]:na,color=color.blue,linewidth=8,offset=-x120,style=plot.style_circles,transp=0)
+
+//label d20,d60,d120
+// var label l_d20 = label.new(x=na, y=na,yloc=yloc.belowbar,textcolor=color.white, color=color.gray,style=label.style_label_up)
+// var label l_d60 = label.new(x=na, y=na,yloc=yloc.belowbar,textcolor=color.white, color=color.red,style=label.style_label_up)
+// var label l_d120 = label.new(x=na, y=na,yloc=yloc.belowbar,textcolor=color.white, color=color.blue,style=label.style_label_up)
+// var d20 = 0
+// var d60 = 0
+// var d120 = 0
+// barcolor(color=barstate.islast?color.black:na)
+// if (barstate.islast)
+//     //barcolor(color=color.black,offset=bar_index)
+//     d20 := bar_index-20
+//     d60 := bar_index-60
+//     d120 := bar_index-120
+
+//     label.set_text(id=l_d20, text="20天的抵扣价:" + tostring(close[d20]))
+//     // Update the label's location
+//     label.set_x(id=l_d20, x=d20)
+//     label.set_y(id=l_d20, y=close[d20]+tr)
+
+//     label.set_text(id=l_d60, text="60天的抵扣价:" + tostring(close[d60]))
+//     // Update the label's location
+//     label.set_x(id=l_d60, x=d60)
+//     label.set_y(id=l_d60, y=close[d60])
+
+//     label.set_text(id=l_d120, text="120天的抵扣价:" + tostring(close[d120]))
+//     // Update the label's location
+//     label.set_x(id=l_d120, x=d120)
+//     label.set_y(id=l_d120, y=close[d120])
